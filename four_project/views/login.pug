@@ -1,0 +1,92 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title= login
+  // <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:800&display=swap&subset=korean', rel='stylesheet')
+  style.
+    html {
+        cursor: url('2.cur'), pointer;
+    }
+
+    body {
+        font-family: 'Noto Serif KR', sans-serif;
+        display: table;
+        margin: 0px auto;
+        background-image: url('japan6.jpg');
+        background-size: 100%;
+    }
+
+    #background {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #loginBackground {
+        width: 280px;
+        height: auto;
+        background-color:#4d4d4d70;
+        box-shadow: 10px 10px 20px #424242;
+        padding-top: 40px;
+        padding-left: 50px;
+        padding-bottom: 15px;
+        margin: 0px auto;
+        margin-top: 80px;
+        border-radius: 1em;
+    }
+
+    #title {
+        text-align: center;
+        font-weight: 600;
+        margin-top: 165px;
+    }
+
+    #loginButton {
+        cursor: url('6.cur'), pointer;
+        font-family: 'Noto Serif KR', sans-serif;
+        background-image: linear-gradient(to left, #29323c20, #48556370);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 8px;
+        border: 0;
+        border-radius: 0.5em;
+    }
+
+    #name, #password {
+        cursor: url('13.cur'), pointer;
+        font-family: 'Nanum Gothic', sans-serif;
+        width: 200px;
+        height: 25px;
+        border: 0px;
+        border-bottom: #FFFFFF 1.5px solid;
+        background-color: transparent;
+    }
+
+    ::selection {
+        background: #ebd3f5;
+    }
+
+    ::-moz-selection {
+        background: #ebd3f5;
+    }
+    
+
+    
+#header
+  h1#title 4조의 집
+#wrap
+  #aside
+    #loginBackground
+      form#login-form(action='/auth/login' method='post')
+        .input-group
+          label(for='name') ID &nbsp;
+          input#name(type='email' name='email' required autofocus)
+        .input-group
+          label(for='password') PW
+          input#password(type='password' name='password' required)
+        if loginError
+          .error-message= loginError
+        input#loginButton(type='submit', value='LOGIN')
+        input#loginButton(type='button', value='JOIN', onClick="location.href='/join'")

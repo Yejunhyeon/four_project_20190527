@@ -1,0 +1,63 @@
+doctype html
+
+head
+  title Question
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap&subset=korean', rel='stylesheet')
+  link(href="./main2.css" rel="stylesheet")
+  link(href="./qna.css" rel="stylesheet")
+.container
+.wrap
+  .aside
+    .mainmenu
+      h2 4조의 집
+      ul
+        .menu
+          a#member(href='/../member',onclick="pagefetch('./member')") 조원소개
+          a#japan(href='/../japan',onclick="pagefetch('./japan')") 현지학기제
+          a#question1(href='/../question',onclick="pagefetch('./question')") 질의응답
+          a#logout(href='/auth/logout') LOGOUT
+    //메인
+    .main.gb
+      //질의응답
+      #question
+      table#question-list
+        thead
+          tr
+            th(width='120px') 게시글번호
+            th(width='140px') 사용자
+            th 내용
+            th(width='100px') 수정
+            th(width='100px') 삭제
+        tbody
+      
+      #recomment
+        form.form-container#comment-form
+          input#question_id(type='text' name='question_id' readOnly)
+          input#nick(type='text' name='question_nick' value=user.nick readOnly)
+          span(width="100px" ) 님이 답글 남기기
+          input#replycomment(type='text' name='com_context' placeholder='댓글을 입력하세요')
+          input#passwd(type='text' name='com_password' placeholder='비밀번호를 입력하세요')
+          button#replybtn(type='submit' ) 등록 
+          button#replycancel(type='button'  onclick='cancel()') 취소
+
+      button.open-button(onclick='openForm()') 질문하기
+
+      #myForm.form-popup
+        form.form-container#user-form
+          h1 Q &amp; A
+          label(for='nick')
+            b 사용자
+          input(type='text' value=user.nick name='nick' required='' readOnly)
+            
+          label(for='context')
+            b 내용
+          input(type='text' placeholder='질문을 입력하세요' name='context' required='')
+            
+          label(for='password')
+            b 비밀번호
+          input(type='text' placeholder='비밀번호를 입력하세요' name='password' required='')
+                  
+          button.btn(type='submit') 등록
+          button.btn.cancel(type='button' onclick='closeForm()') 취소
+    script(src='/qna.js')

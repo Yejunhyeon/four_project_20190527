@@ -1,0 +1,27 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title main
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap&subset=korean', rel='stylesheet')
+  link(href="./main2.css" rel="stylesheet")
+
+.container
+.wrap
+  .aside
+    .mainmenu
+      h2 4조의 집
+      ul
+        .menu
+          a#member(href='/../member',onclick="pagefetch('./member')") 조원소개
+          a#japan(href='/../japan',onclick="pagefetch('./japan')") 현지학기제
+          a#question1(href='/../question',onclick="pagefetch('./question')") 질의응답
+          a#logout(href='/auth/logout') LOGOUT
+    .main
+      article
+      block main
+      h1 오늘도 행복한 하루 보내세요,, ^^*
+      img#happy1(src='happy5.jpg')
+
+
+script(src='/main2.js')

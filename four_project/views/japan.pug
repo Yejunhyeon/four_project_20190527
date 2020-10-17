@@ -1,0 +1,67 @@
+doctype html
+head
+  title Japan
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap&subset=korean', rel='stylesheet')
+  link(href="./main2.css" rel="stylesheet")
+.container
+.wrap
+  .aside
+    .mainmenu
+      h2 4조의 집
+      ul
+        .menu
+          a#member(href='/../member',onclick="pagefetch('./member')") 조원소개
+          a#japan(href='/../japan',onclick="pagefetch('./japan')") 현지학기제
+          a#question1(href='/../question',onclick="pagefetch('./question')") 질의응답
+          a#logout(href='/auth/logout') LOGOUT
+    .main.gb
+      article
+      #japanmenu
+        #hardcording
+          p
+            br
+            br
+            | 연수대상 : 컴퓨터정보계열 2학년 2WDJ
+            br
+            br
+            | 연수인원 : 48명
+            br
+            br
+            | 인솔교수 : 박성철 교수님, 김종율 교수님
+            br
+            br
+            | 연수장소 : 일본 후쿠오카현 후쿠오카시 연수기관 Nare International(주) 나래 커뮤니케이션 아카데미
+            br
+            br
+            | 연수기간 : 2019년 7월 29일 ~ 9월 8일 (6주, 42일)
+            br
+            br
+            | 연수경비 : 15만엔
+            br
+            br
+            | 연수내용   -수준별 일본 비지니스 현장 회화 실습
+            br            
+            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-일본 비지니스 매너, 일본 문화체험
+            br
+            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-일어 청해/말하기/작문
+            br
+            |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-실무일본어 회화, 현장실습, 창의공학실무 등 9학점 이수
+            br
+            br
+            br       
+        a#1week(onclick='weekplan(this),getjapan(0)') 1주차
+        a#2week(onclick='weekplan(this),getjapan(1)') 2주차
+        a#3week(onclick='weekplan(this),getjapan(2)') 3주차
+        a#4week(onclick='weekplan(this),getjapan(3)') 4주차
+        a#5week(onclick='weekplan(this),getjapan(4)') 5주차
+        a#6week(onclick='weekplan(this),getjapan(5)') 6주차
+        #weekendinfor
+          img#weekendimg(src='')
+          p#date
+          p#place
+          p#cost
+          p#plan
+          p#experience
+
+    script(src='./main2.js')

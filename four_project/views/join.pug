@@ -1,0 +1,100 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title= title
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:800&display=swap&subset=korean', rel='stylesheet')
+  style.
+    html {
+        cursor: url('2.cur'), pointer;
+    }
+
+    body {
+        font-family: 'Noto Serif KR', sans-serif;
+        display: table;
+        margin: 0px auto;
+        background-image: url('japan6.jpg');
+        background-size: 100%;
+    }
+
+    #background {
+        background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    #loginBackground {
+        width: 280px;
+        height: auto;
+        background-color:#4d4d4d70;
+        box-shadow: 10px 10px 20px #424242;
+        padding-top: 40px;
+        padding-left: 30px;
+        padding-bottom: 15px;
+        margin: 0px auto;
+        margin-top: 80px;
+        border-radius: 1em;
+    }
+
+    #title {
+        text-align: center;
+        font-weight: 600;
+        margin-top: 100px;
+    }
+
+    #loginButton {
+        cursor: url('6.cur'), pointer;
+        font-family: 'Noto Serif KR', sans-serif;
+        background-image: linear-gradient(to left, #29323c20, #48556370);
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        margin-top: 30px;
+        margin-left: 8px;
+        border: 0;
+        border-radius: 0.5em;
+    }
+
+    #name, #password, #nickname, #tel ,#address {
+        cursor: url('13.cur'), pointer;
+        font-family: 'Nanum Gothic', sans-serif;
+        width: 200px;
+        height: 25px;
+        border: 0px;
+        border-bottom: #FFFFFF 1.5px solid;
+        background-color: transparent;
+        margin-bottom: 20px;
+    }
+
+    ::selection {
+        background: #ebd3f5;
+    }
+
+    ::-moz-selection {
+        background: #ebd3f5;
+    }
+
+#header
+  h1#title 함께해요
+#wrap
+  #aside
+    #loginBackground
+    
+        form#join-form(action='/auth/join' method='post')
+          .input-group  
+            label(for='name') ID &nbsp;&nbsp;&nbsp;&nbsp;
+            input#name(type='email' name='email' required )
+          .input-group
+            label(for='password') PW &nbsp;&nbsp;
+            input#password(type='password' name='password' required)
+          .input-group
+            label(for='nick') NICK
+            input#nickname(type='text' name='nick' required)
+          .input-group
+            label(for='tel') TEL &nbsp;&nbsp;
+            input#tel(type='text' name='tel' required )
+          .input-group
+            label(for='address') ADRS
+            input#address(type='text' name='adr' required)
+          if joinError
+            .error-message= joinError
+          input#loginButton(type='button', value='BACK' onClick="location.href='/'")
+          input#loginButton(type='submit', value='JOIN')

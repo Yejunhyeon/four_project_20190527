@@ -1,0 +1,42 @@
+
+head
+  title Member
+  link(href='https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap&subset=korean', rel='stylesheet')
+  link(href='https://fonts.googleapis.com/css?family=Nanum+Gothic:700&display=swap&subset=korean', rel='stylesheet')
+  link(href="./main2.css" rel="stylesheet")
+.container
+.wrap
+  .aside
+    .mainmenu
+      h2 4조의 집
+      ul
+        .menu
+          a#member(href='/../member',onclick="pagefetch('./member')") 조원소개
+          a#japan(href='/../japan',onclick="pagefetch('./japan')") 현지학기제
+          a#question1(href='/../question',onclick="pagefetch('./question')") 질의응답
+          a#logout(href='/auth/logout') LOGOUT
+    .main.gb
+      article
+      // 조원소개
+      #memberimage
+        img#yu(src='yu1.jpg' onclick='yuclick(),getteam(0)')
+        img#kim(src='kim1.jpg' onclick='kimclick();getteam(1);')
+        img#ye(src='ye1.jpg' onclick='yeclick();getteam(2);')
+        img#choi(src='choi1.jpg' onclick='choiclick();getteam(3);')
+        img#lee(src='lee1.jpg' onclick='leeclick();getteam(4);')
+      #memberprofile
+        img#yuphoto(src='yu2.jpg')
+        img#kimphoto(src='kim2.jpg')
+        img#yephoto(src='ye2.jpg')
+        img#choiphoto(src='choi2.jpg')
+        img#leephoto(src='lee2.jpg')
+        #profilewrite
+          p#name  
+          p#birth
+          p#blood
+          p#school
+          p#address
+          p#motto
+          p#self
+
+    script(src='./main2.js')
